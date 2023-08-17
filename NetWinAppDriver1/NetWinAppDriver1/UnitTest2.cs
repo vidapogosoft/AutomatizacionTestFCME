@@ -40,10 +40,8 @@ namespace NetWinAppDriver1
         public void TestCalculator()
         {
             _driver.FindElementByAccessibilityId("num8Button").Click();
-            _driver.FindElementByAccessibilityId("num8Button").Click();
             _driver.FindElementByAccessibilityId("divideButton").Click();
-            _driver.FindElementByAccessibilityId("num1Button").Click();
-            _driver.FindElementByAccessibilityId("num1Button").Click();
+            _driver.FindElementByAccessibilityId("num8Button").Click();
             _driver.FindElementByAccessibilityId("equalButton").Click();
             Assert.AreEqual("88", GetCalculatorResultText());
 

@@ -31,7 +31,7 @@ namespace NetWinAppDriver1
         {
 
             WindowsElement NoteArea = DesktopSession.FindElementByAccessibilityId("15");
-            NoteArea.SendKeys("Curso de SINERGIASS");
+            NoteArea.SendKeys("Curso de AUTOMATIZACION DE PRUEBAS");
 
             Assert.IsNotNull("OK", NoteArea.Text);
 

@@ -17,7 +17,7 @@ namespace NetWinAppDriver1
         {
 
             var options = new AppiumOptions();
-            options.AddAdditionalCapability("app", "C:\\vidapogosoft\\cursos\\2021\\CSD\\TesForm\\AppWinForm1.exe");
+            options.AddAdditionalCapability("app", "D:\\vidapogosoft\\cursos\\2023\\SIPECOM\\TestAutomatizadosFCME\\herramientas\\AppWinForm1.exe");
             options.AddAdditionalCapability("deviceName", "PORTUGALASUS");
 
             _driver = new WindowsDriver<WindowsElement>(new Uri("http://127.0.0.1:4723"), options);
@@ -31,6 +31,9 @@ namespace NetWinAppDriver1
         {
             if (_driver != null)
             {
+
+                _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(15);
+
                 _driver.Quit();
                 _driver = null;
             }
@@ -39,11 +42,16 @@ namespace NetWinAppDriver1
         [Test]
         public void TestWIndows()
         {
-            _driver.FindElementByAccessibilityId("TxtDireccion").Click();
-            _driver.FindElementByAccessibilityId("TxtDireccion").SendKeys("GYE Nor Oeste");
 
             _driver.FindElementByAccessibilityId("TxtIdentificacion").Click();
-            _driver.FindElementByAccessibilityId("TxtIdentificacion").SendKeys("0919172551");
+            _driver.FindElementByAccessibilityId("TxtIdentificacion").SendKeys("0925183665");
+
+            _driver.FindElementByAccessibilityId("TxtNombres").Click();
+            _driver.FindElementByAccessibilityId("TxtNombres").SendKeys("Curso de Automatizacion WinAppDrive");
+
+
+            _driver.FindElementByAccessibilityId("TxtDireccion").Click();
+            _driver.FindElementByAccessibilityId("TxtDireccion").SendKeys("GYE Nor Oeste");
 
 
             _driver.FindElementByName("Confirmar Datos").Click();
