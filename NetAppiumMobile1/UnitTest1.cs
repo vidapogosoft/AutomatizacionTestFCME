@@ -23,9 +23,12 @@ namespace NetAppiumMobile1
 
             DesiredCapabilities cap = new DesiredCapabilities();
 
-            cap.SetCapability("app", "C://vidapogosoft//cursos//2021//CSD//ContactManager.apk");
-            cap.SetCapability("device", "RQ300729UE");
-            cap.SetCapability("deviceName", "G3223");
+            //cap.SetCapability("app", "C://vidapogosoft//cursos//2021//CSD//ContactManager.apk");
+            //cap.SetCapability("device", "RQ300729UE");
+            //cap.SetCapability("deviceName", "G3223");
+            cap.SetCapability("app", "D:\\vidapogosoft\\cursos\\2023\\SIPECOM\\TestAutomatizadosFCME\\herramientas\\ContactManager.apk");
+            cap.SetCapability("device", "SM-T295");
+            cap.SetCapability("deviceName", "Tab VPR");
             cap.SetCapability("platformName", "Android");
 
             cap.SetCapability("app-package", "com.example.android.contactmanager-1");
