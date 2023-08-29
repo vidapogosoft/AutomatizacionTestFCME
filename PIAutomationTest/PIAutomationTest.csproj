@@ -16,8 +16,20 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Drivers\" />
+    <Folder Include="Drivers\dll\" />
+    <Folder Include="Drivers\rest\" />
+    <Folder Include="Drivers\selenium\" />
+    <Folder Include="Features\componentes\" />
+    <Folder Include="Features\bddweb\" />
+    <Folder Include="Features\bddmovil\" />
+    <Folder Include="Features\bdddesktop\" />
     <Folder Include="Support\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="Bank">
+      <HintPath>Drivers\dll\Bank.dll</HintPath>
+    </Reference>
   </ItemGroup>
 
 </Project>
