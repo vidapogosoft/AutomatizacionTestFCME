@@ -26,8 +26,8 @@ Scenario Outline: Registro
 	And  tipo de identificacion <tipoidentificacion>
 	And  numero de identificacion <identificacion>
 	And  telefono convencional <fono>
-	And  direccion <direccion>
-	And  correo <email>
+	And  direccion de contacto <direccion>
+	And  correo electronico <email>
 	Then click sobre el boton guardar
 	
 	Examples:

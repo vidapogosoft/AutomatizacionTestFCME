@@ -54,38 +54,38 @@ namespace PIAutomationTest.StepDefinitions
             throw new PendingStepException();
         }
 
-        [When(@"comienzo el registro de datos de nombres VPR(.*)-Agosto(.*)")]
-        public void WhenComienzoElRegistroDeDatosDeNombresVPR_Agosto(int p0, int p1)
+        [When(@"comienzo el registro de datos de nombres (.*)")]
+        public void WhenComienzoElRegistroDeDatosDeNombres(string nombre)
         {
             throw new PendingStepException();
         }
 
         [When(@"tipo de identificacion (.*)")]
-        public void WhenTipoDeIdentificacion(int p0)
+        public void WhenTipoDeIdentificacion(string p0)
         {
             throw new PendingStepException();
         }
 
         [When(@"numero de identificacion (.*)")]
-        public void WhenNumeroDeIdentificacion(int p0)
+        public void WhenNumeroDeIdentificacion(string p0)
         {
             throw new PendingStepException();
         }
 
         [When(@"telefono convencional (.*)")]
-        public void WhenTelefonoConvencional(int p0)
+        public void WhenTelefonoConvencional(string p0)
         {
             throw new PendingStepException();
         }
 
-        [When(@"direccion norte de gye")]
-        public void WhenDireccionNorteDeGye()
+        [When(@"direccion de contacto (.*)")]
+        public void WhenDireccion(string p0)
         {
             throw new PendingStepException();
         }
 
-        [When(@"correo correo(.*)@dominio\.com")]
-        public void WhenCorreoCorreoDominio_Com(int p0)
+        [When(@"correo electronico (.*)")]
+        public void WhenCorreo(string p0)
         {
             throw new PendingStepException();
         }

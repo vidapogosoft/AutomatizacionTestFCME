@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Appium.WebDriver" Version="4.4.5" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.0.0" />
     <PackageReference Include="Selenium.Support" Version="4.11.0" />
     <PackageReference Include="Selenium.WebDriver" Version="4.11.0" />
@@ -19,6 +20,8 @@
 
   <ItemGroup>
     <Folder Include="Drivers\dll\" />
+    <Folder Include="Drivers\exe\" />
+    <Folder Include="Drivers\apk\" />
     <Folder Include="Drivers\rest\" />
     <Folder Include="Drivers\selenium\1140573516\" />
     <Folder Include="Features\componentes\" />

@@ -222,10 +222,10 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.And(string.Format("telefono convencional {0}", fono), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 29
- testRunner.And(string.Format("direccion {0}", direccion), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("direccion de contacto {0}", direccion), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 30
- testRunner.And(string.Format("correo {0}", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And(string.Format("correo electronico {0}", email), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 31
  testRunner.Then("click sobre el boton guardar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
