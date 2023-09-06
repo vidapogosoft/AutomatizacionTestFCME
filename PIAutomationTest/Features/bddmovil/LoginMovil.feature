@@ -10,7 +10,7 @@ Scenario: Registro de datos en app correcto
 	| 1      | Producto 1  | 100 |
 	| 2      | Producto 2  | 200 |
 	| 3      | Producto 3  | 300 |
-	And realiza click en boton save
+	And visualiza resultado de la lista
 	Then registro correcto de la lista
 
 Scenario Outline: Registro de datos en app valido resultado

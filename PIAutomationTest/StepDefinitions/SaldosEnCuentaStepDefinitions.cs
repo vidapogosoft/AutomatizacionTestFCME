@@ -11,6 +11,7 @@ namespace PIAutomationTest.StepDefinitions
     {
         public int beginningBalance;
         public int debitAmount;
+        public int creditAmount;
         public double balance;
         
         [Given(@"Mi saldo inicial de dolares en cuenta es de (.*)")]
@@ -39,16 +40,36 @@ namespace PIAutomationTest.StepDefinitions
         }
 
         [When(@"Se debita un monto en dolares negativo de (.*)")]
-        public void WhenSeDebitaUnMontoEnDolaresNegativoDe(int p0)
+        public void WhenSeDebitaUnMontoEnDolaresNegativoDe(int montodebito)
         {
 
-            Assert.AreEqual("", "");
+            debitAmount = montodebito;
+
+            BankAccount account = new BankAccount("vidapogosoft", beginningBalance);
+
+            //Act
+
+            account.Debit(debitAmount);
+
+            //Asert
+
+            balance = account.Balance;
         }
 
         [When(@"Se acredita un monto en dolares de (.*)")]
-        public void WhenSeAcreditaUnMontoEnDolaresDe(int p0)
+        public void WhenSeAcreditaUnMontoEnDolaresDe(int montocredito)
         {
-            throw new PendingStepException();
+            creditAmount = montocredito;
+
+            BankAccount account = new BankAccount("vidapogosoft", beginningBalance);
+
+            //Act
+
+            account.Credit(creditAmount);
+
+            //Asert
+
+            balance = account.Balance;
         }
 
         [Then(@"Saldo actual en cuenta de (.*)")]

@@ -9,7 +9,7 @@ Scenario Outline: Login Exitoso
 	
 	Examples:
 	| rutaweb												 | username   | password | webhome                                          | 
-	| https://admin-sysnnova.com/OpenFact/Account/Login.aspx | demo		  | 0430     | https://admin-sysnnova.com/openfact/Default.aspx |
+	| https://admin-sysnnova.com/OpenFact/Account/Login.aspx | demo		  | 0430     | https://admin-sysnnova.com/OpenFact/Default.aspx |
 
 Scenario Outline: Seleccion de Menu en Home
 	Given Usuario se dirige al menu <menu>

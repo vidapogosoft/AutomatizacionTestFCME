@@ -124,7 +124,7 @@ this.ScenarioInitialize(scenarioInfo);
  testRunner.When("llena formulario con los siguientes datos", ((string)(null)), table1, "When ");
 #line hidden
 #line 12
- testRunner.And("realiza click en boton registrar", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
+ testRunner.And("visualizo datos registrados", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
 #line 13
  testRunner.Then("registro correcto", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");

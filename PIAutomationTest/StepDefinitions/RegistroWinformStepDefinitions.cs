@@ -12,10 +12,21 @@ namespace PIAutomationTest.StepDefinitions
     [Binding]
     public class RegistroWinformStepDefinitions
     {
+        private readonly WindowsDriver<WindowsElement> _driver;
+
+
         [Given(@"usuario se dirige a aplicativo winform de registro")]
         public void GivenUsuarioSeDirigeAAplicativoWinformDeRegistro()
         {
-            throw new PendingStepException();
+
+            var options = new AppiumOptions();
+            options.AddAdditionalCapability("app", "D:\\vidapogosoft\\cursos\\2023\\SIPECOM\\TestAutomatizadosFCME\\herramientas\\AppWinForm1.exe");
+            options.AddAdditionalCapability("deviceName", "PORTUGALASUS");
+
+            _driver = new WindowsDriver<WindowsElement>(new Uri("http://127.0.0.1:4723"), options);
+
+            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+
         }
 
         [When(@"llena formulario con los siguientes datos")]
@@ -28,12 +39,22 @@ namespace PIAutomationTest.StepDefinitions
                 //TODO
                 //data.nombres;
 
-            }
+                _driver.FindElementByAccessibilityId("TxtIdentificacion").Click();
+                _driver.FindElementByAccessibilityId("TxtIdentificacion").SendKeys(data.identificacion);
 
-            throw new PendingStepException();
+                _driver.FindElementByAccessibilityId("TxtNombres").Click();
+                _driver.FindElementByAccessibilityId("TxtNombres").SendKeys(data.nombres);
+
+
+                _driver.FindElementByAccessibilityId("TxtDireccion").Click();
+                _driver.FindElementByAccessibilityId("TxtDireccion").SendKeys(data.direccion);
+
+
+                _driver.FindElementByName("Confirmar Datos").Click();
+            }
         }
 
-        [When(@"realiza click en boton registrar")]
+        [When(@"visualizo datos registrados")]
         public void WhenRealizaClickEnBotonRegistrar()
         {
             throw new PendingStepException();

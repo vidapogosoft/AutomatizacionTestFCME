@@ -76,7 +76,7 @@ namespace PIAutomationTest.Features.Bddweb
         [NUnit.Framework.TestAttribute()]
         [NUnit.Framework.DescriptionAttribute("Login Exitoso")]
         [NUnit.Framework.CategoryAttribute("tag1")]
-        [NUnit.Framework.TestCaseAttribute("https://admin-sysnnova.com/OpenFact/Account/Login.aspx", "demo", "0430", "https://admin-sysnnova.com/openfact/Default.aspx", null)]
+        [NUnit.Framework.TestCaseAttribute("https://admin-sysnnova.com/OpenFact/Account/Login.aspx", "demo", "0430", "https://admin-sysnnova.com/OpenFact/Default.aspx", null)]
         public virtual void LoginExitoso(string rutaweb, string username, string password, string webhome, string[] exampleTags)
         {
             string[] @__tags = new string[] {
