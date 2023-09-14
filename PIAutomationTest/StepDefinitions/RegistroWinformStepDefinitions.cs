@@ -6,14 +6,21 @@ using TechTalk.SpecFlow.Assist;
 
 using OpenQA.Selenium.Appium;
 using OpenQA.Selenium.Appium.Windows;
+using SpecFlow.Actions.WindowsAppDriver;
 
 namespace PIAutomationTest.StepDefinitions
 {
     [Binding]
     public class RegistroWinformStepDefinitions
     {
-        private readonly WindowsDriver<WindowsElement> _driver;
 
+        //private readonly WindowsDriver<WindowsElement> _driver;
+        private readonly AppDriver _appDriver;
+
+        public RegistroWinformStepDefinitions(AppDriver appDriver)
+        {
+            _appDriver = appDriver;
+        }
 
         [Given(@"usuario se dirige a aplicativo winform de registro")]
         public void GivenUsuarioSeDirigeAAplicativoWinformDeRegistro()
@@ -23,9 +30,7 @@ namespace PIAutomationTest.StepDefinitions
             options.AddAdditionalCapability("app", "D:\\vidapogosoft\\cursos\\2023\\SIPECOM\\TestAutomatizadosFCME\\herramientas\\AppWinForm1.exe");
             options.AddAdditionalCapability("deviceName", "PORTUGALASUS");
 
-            _driver = new WindowsDriver<WindowsElement>(new Uri("http://127.0.0.1:4723"), options);
-
-            _driver.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            _appDriver.Current.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
 
         }
 
@@ -39,18 +44,17 @@ namespace PIAutomationTest.StepDefinitions
                 //TODO
                 //data.nombres;
 
-                _driver.FindElementByAccessibilityId("TxtIdentificacion").Click();
-                _driver.FindElementByAccessibilityId("TxtIdentificacion").SendKeys(data.identificacion);
+                _appDriver.Current.FindElementByAccessibilityId("TxtIdentificacion").Click();
+                _appDriver.Current.FindElementByAccessibilityId("TxtIdentificacion").SendKeys(data.identificacion);
 
-                _driver.FindElementByAccessibilityId("TxtNombres").Click();
-                _driver.FindElementByAccessibilityId("TxtNombres").SendKeys(data.nombres);
-
-
-                _driver.FindElementByAccessibilityId("TxtDireccion").Click();
-                _driver.FindElementByAccessibilityId("TxtDireccion").SendKeys(data.direccion);
+                _appDriver.Current.FindElementByAccessibilityId("TxtNombres").Click();
+                _appDriver.Current.FindElementByAccessibilityId("TxtNombres").SendKeys(data.nombres);
 
 
-                _driver.FindElementByName("Confirmar Datos").Click();
+                _appDriver.Current.FindElementByAccessibilityId("TxtDireccion").Click();
+                _appDriver.Current.FindElementByAccessibilityId("TxtDireccion").SendKeys(data.direccion);
+
+                _appDriver.Current.FindElementByName("Confirmar Datos").Click();
             }
         }
 

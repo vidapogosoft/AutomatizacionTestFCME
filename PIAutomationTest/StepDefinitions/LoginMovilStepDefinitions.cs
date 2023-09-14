@@ -5,25 +5,36 @@ using TechTalk.SpecFlow.Assist;
 
 using OpenQA.Selenium.Remote;
 using OpenQA.Selenium.Appium.Android;
+using SpecFlow.Actions.Android.Driver;
+using OpenQA.Selenium.Appium;
 
 namespace PIAutomationTest.StepDefinitions
 {
     [Binding]
     public class LoginMovilStepDefinitions
     {
+
         //crear la instancia para el appium driver
 
-        private readonly AndroidDriver<AndroidElement> driverMobile;
+        private readonly AndroidAppDriver _androidAppDriver;
+
+        public LoginMovilStepDefinitions(AndroidAppDriver androidAppDriver)
+        {
+            _androidAppDriver = androidAppDriver;
+        }
+
 
         [Given(@"usuario se dirige a app de registro")]
         public void GivenUsuarioSeDirigeAAppDeRegistro()
         {
-            DesiredCapabilities cap = new DesiredCapabilities();
+           
+            AppiumOptions cap = new AppiumOptions();
 
-            cap.SetCapability("app", "D:\\vidapogosoft\\cursos\\2023\\SIPECOM\\TestAutomatizadosFCME\\herramientas\\CrudContact\\app-release.apk");
-            cap.SetCapability("device", "SM-T295");
-            cap.SetCapability("deviceName", "Tab VPR");
-            cap.SetCapability("platformName", "Android");
+            cap.AddAdditionalCapability("app", "D:\\vidapogosoft\\cursos\\2023\\SIPECOM\\TestAutomatizadosFCME\\herramientas\\CrudContact\\app-release.apk");
+            cap.AddAdditionalCapability("device", "SM-T295");
+            cap.AddAdditionalCapability("deviceName", "Tab VPR");
+            cap.AddAdditionalCapability("platformName", "Android");
+
         }
 
         [When(@"llena formulario con los siguientes datos en lista")]
@@ -37,17 +48,17 @@ namespace PIAutomationTest.StepDefinitions
                 //data.codigo;
 
                 //Cajas de texto
-                AndroidElement TxtId = driverMobile.FindElementById("com.android.sqlite:id/TxtCodigo");
+                AndroidElement TxtId = _androidAppDriver.Current.FindElementById("com.android.sqlite:id/TxtCodigo");
                 TxtId.SendKeys(data.codigo);
 
-                AndroidElement TxtDescripcion = driverMobile.FindElementById("com.android.sqlite:id/TxtDescripcion");
+                AndroidElement TxtDescripcion = _androidAppDriver.Current.FindElementById("com.android.sqlite:id/TxtDescripcion");
                 TxtDescripcion.SendKeys(data.descripcion);
 
-                AndroidElement TxtPrecio = driverMobile.FindElementById("com.android.sqlite:id/TxtPrecio");
+                AndroidElement TxtPrecio = _androidAppDriver.Current.FindElementById("com.android.sqlite:id/TxtPrecio");
                 TxtPrecio.SendKeys(data.precio);
 
                 ///Boton
-                AndroidElement BtnSave = driverMobile.FindElementById("com.android.sqlite:id/BtnSave");
+                AndroidElement BtnSave = _androidAppDriver.Current.FindElementById("com.android.sqlite:id/BtnSave");
                 BtnSave.Click();
             }
         }
@@ -62,13 +73,13 @@ namespace PIAutomationTest.StepDefinitions
         public void WhenLlenaFormularioConLosSiguientesDatos(string codigo, string descripcion, string precio)
         {
             //Cajas de texto
-            AndroidElement TxtId = driverMobile.FindElementById("com.android.sqlite:id/TxtCodigo");
+            AndroidElement TxtId = _androidAppDriver.Current.FindElementById("com.android.sqlite:id/TxtCodigo");
             TxtId.SendKeys(codigo);
 
-            AndroidElement TxtDescripcion = driverMobile.FindElementById("com.android.sqlite:id/TxtDescripcion");
+            AndroidElement TxtDescripcion = _androidAppDriver.Current.FindElementById("com.android.sqlite:id/TxtDescripcion");
             TxtDescripcion.SendKeys(descripcion);
 
-            AndroidElement TxtPrecio = driverMobile.FindElementById("com.android.sqlite:id/TxtPrecio");
+            AndroidElement TxtPrecio = _androidAppDriver.Current.FindElementById("com.android.sqlite:id/TxtPrecio");
             TxtPrecio.SendKeys(precio);
         }
 
@@ -76,7 +87,7 @@ namespace PIAutomationTest.StepDefinitions
         public void WhenRealizaClickEnBotonSave()
         {
             ///Boton
-            AndroidElement BtnSave = driverMobile.FindElementById("com.android.sqlite:id/BtnSave");
+            AndroidElement BtnSave = _androidAppDriver.Current.FindElementById("com.android.sqlite:id/BtnSave");
             BtnSave.Click();
         }
 
