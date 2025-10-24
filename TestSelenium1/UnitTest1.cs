@@ -9,7 +9,7 @@ namespace TestSelenium1
     public class UnitTest1
     {
         //Se inicializa el driver de manera global
-        public IWebDriver driver = new ChromeDriver(@"D:\vidapogosoft\cursos\2023\SIPECOM\TestAutomatizadosFCME\herramientas\");
+        public IWebDriver driver = new ChromeDriver(@"D:\vidapogosoft\cursos\2025\");
 
         //instancia de manera global la URL de la pagina a testear
         public string url = "https://admin-sysnnova.com/OpenFact/Account/Login.aspx";
